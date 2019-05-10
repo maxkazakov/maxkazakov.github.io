@@ -18,48 +18,36 @@
     <meta property="og:site_name" content="Max Kazakov">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Autoresizing Layout">
-    <meta property="og:description" content="План статьи
-
- 1. Способы верстки в iOS
- 2. Основные принципы Autoresizing
- 3. Autoresizing в коде
- 4. Autoresizing в Interface Builder
- 5. translatesAutoresizingMaskIntoConstraints
- 6. Заключение
-
-Тут короткое вступление.
+    <meta property="og:description" content="Тут короткое вступление.
 
 Способы верстки в iOS
 На сегодняшний день UIKit предоставляет разработчикам 2 способа управления
-версткой: ручное и Autolayout.
+версткой: ручной и Autolayout.
 
 
 Ручной (верстка на фреймах) — управление размерами и позицией view вручную,
-путем изменения свойств frame(либо center  и bounds). Как правило данны">
+путем изменения свойств frame(либо center  и bounds). Как правило данный способ
+реализуется при помощи переопределения метода layoutSubviews — метод UIView,
+который вызывается системой в тот момент, когда нам известны свойство bounds
+текущего экземпляра. В этом методе">
     <meta property="og:url" content="http://localhost:2368/autoresizing-masks/">
     <meta property="article:published_time" content="2019-05-09T11:44:18.000Z">
-    <meta property="article:modified_time" content="2019-05-10T11:20:42.000Z">
+    <meta property="article:modified_time" content="2019-05-10T11:23:18.000Z">
     <meta property="article:publisher" content="https://www.facebook.com/max.kazakov.376">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Autoresizing Layout">
-    <meta name="twitter:description" content="План статьи
-
- 1. Способы верстки в iOS
- 2. Основные принципы Autoresizing
- 3. Autoresizing в коде
- 4. Autoresizing в Interface Builder
- 5. translatesAutoresizingMaskIntoConstraints
- 6. Заключение
-
-Тут короткое вступление.
+    <meta name="twitter:description" content="Тут короткое вступление.
 
 Способы верстки в iOS
 На сегодняшний день UIKit предоставляет разработчикам 2 способа управления
-версткой: ручное и Autolayout.
+версткой: ручной и Autolayout.
 
 
 Ручной (верстка на фреймах) — управление размерами и позицией view вручную,
-путем изменения свойств frame(либо center  и bounds). Как правило данны">
+путем изменения свойств frame(либо center  и bounds). Как правило данный способ
+реализуется при помощи переопределения метода layoutSubviews — метод UIView,
+который вызывается системой в тот момент, когда нам известны свойство bounds
+текущего экземпляра. В этом методе">
     <meta name="twitter:url" content="http://localhost:2368/autoresizing-masks/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Max Kazakov">
@@ -88,8 +76,8 @@
     "headline": "Autoresizing Layout",
     "url": "http://localhost:2368/autoresizing-masks/",
     "datePublished": "2019-05-09T11:44:18.000Z",
-    "dateModified": "2019-05-10T11:20:42.000Z",
-    "description": "План статьи\n\n 1. Способы верстки в iOS\n 2. Основные принципы Autoresizing\n 3. Autoresizing в коде\n 4. Autoresizing в Interface Builder\n 5. translatesAutoresizingMaskIntoConstraints\n 6. Заключение\n\nТут короткое вступление.\n\nСпособы верстки в iOS\nНа сегодняшний день UIKit предоставляет разработчикам 2 способа управления\nверсткой: ручное и Autolayout.\n\n\nРучной (верстка на фреймах) — управление размерами и позицией view вручную,\nпутем изменения свойств frame(либо center  и bounds). Как правило данны",
+    "dateModified": "2019-05-10T11:23:18.000Z",
+    "description": "Тут короткое вступление.\n\nСпособы верстки в iOS\nНа сегодняшний день UIKit предоставляет разработчикам 2 способа управления\nверсткой: ручной и Autolayout.\n\n\nРучной (верстка на фреймах) — управление размерами и позицией view вручную,\nпутем изменения свойств frame(либо center  и bounds). Как правило данный способ\nреализуется при помощи переопределения метода layoutSubviews — метод UIView,\nкоторый вызывается системой в тот момент, когда нам известны свойство bounds\nтекущего экземпляра. В этом методе",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -148,7 +136,7 @@
 
             <section class="post-full-content">
                 <div class="post-content">
-                    <p>План статьи</p><ol><li>Способы верстки в iOS</li><li>Основные принципы Autoresizing</li><li>Autoresizing в коде</li><li>Autoresizing в Interface Builder</li><li>translatesAutoresizingMaskIntoConstraints</li><li>Заключение</li></ol><p>Тут короткое вступление.</p><h2 id="-ios">Способы верстки в iOS</h2><p>На сегодняшний день UIKit предоставляет разработчикам 2 способа управления версткой: ручное и Autolayout.<br></p><p>Ручной (верстка на фреймах) — управление размерами и позицией view вручную, путем изменения свойств <em>frame(</em>либо <em>center</em> и <em>bounds). </em>Как правило данный способ реализуется при помощи переопределения метода <em>layoutSubviews — </em>метод UIView, который вызывается системой в тот момент, когда нам известны свойство bounds текущего экземпляра. В этом методе мы <em>вручную </em>определяем позицию и размеры дочерних вью.</p><p><br>Autolayout использует набор ограничений (constraints), которые описывают как будут располагаться вью относительно друг друга. В отличии от ручного способа, здесь нет необходимости высчитывать <em>frame</em> каждый раз когда в нашей верстке что-то изменилось, Autolayout сделает это за нас. Данный способ также допускает ручную настройку <em>frame</em> в случае, если мы хотим подкорректировать результат лейаута. Для этого нужно переопределить <em>layoutSubviews, </em>вызывать родительскую реализацию этого метода (здесь дочерние вью получат свои размеры из движка Autolayout), скорректировать фреймы дочерних вью.</p><p>Каждый из способов обладает своими преимуществами и недостатками, описание которых достойно отдельно статьи, мы же остановим наше внимание на Autoresizing.</p><h2 id="-autoresizing">Основные принципы Autoresizing</h2><p>Где среди перечисленных способов находится Autoresizing? Autoresizing работает всегда, когда мы решили использовать ручную верстку (и в некоторых случаях при использовании Autolayout, но об этом чуть позже). Autoresizing основан на двух основных понятиях: springs (струны) и struts (распорки). Перевод этих терминов точно отражает их смысл: springs — что-то, что растягивается, struts — что-то, что всегда имеет фиксированный размер. Данные понятия применимы к следующим <strong>параметрам разметки</strong>:<br>1) Внутренние — Width, Height. Описывают размер вью.<br>2) Внешние — Left, Right, Top, Bottom. Описывают положение вью внутри родителя — отступ от левого, правого, верхнего и нижнего края соответственно.</p><p>Рассмотрим простой пример того, как это работает. Допустим у нас есть задача — необходимо чтобы дочерняя вью всегда располагалась по центру родительской и пропорционально изменяла размер при изменении размера родителя (Рис. 1). Решением в данном случае будет установить struts для всех внешних параметров, и установить springs для всех внутренних параметров.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2019/05/center-resize.gif" class="kg-image"><figcaption>Рис. 1. Синий прямоугольник — родительская вью, красный — дочерняя.</figcaption></figure><!--kg-card-end: image--><p>Другой пример — необходимо разместить вью с фиксированным размером в правом нижнем углу родительской вью (Рис. 2). Для это необходимо установить struts для параметров Right и Bottom, а также для всех внутренних параметров, т.к. расстояния от нижнего и правого края до родителя и размер нашей вью строго зафиксированы. Также нужно установить strings для Left и Top, т.к. эти параметры будут изменяться при изменении размеров родительской вью.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2019/05/topleft.gif" class="kg-image"><figcaption>Рис. 2. Вью с фиксированным размером и привязанная к правому нижнему углу</figcaption></figure><!--kg-card-end: image--><p>Очень важно на данном этапе разобраться со всеми перечисленными параметрами, так как интерфейсы для управления ими, которые мы рассмотрим далее, могут немного запутать.</p><h2 id="autoresizing-">Autoresizing в коде</h2><p>Единственный способ регулировать Autoresizing в коде — свойство <em>autoresizingMask </em>у UIView. Данное свойство имеет тип OptionSet со следующим набором опций:</p><!--kg-card-begin: markdown--><ul>
+                    <p>Тут короткое вступление.</p><h2 id="-ios">Способы верстки в iOS</h2><p>На сегодняшний день UIKit предоставляет разработчикам 2 способа управления версткой: ручной и Autolayout.<br></p><p>Ручной (верстка на фреймах) — управление размерами и позицией view вручную, путем изменения свойств <em>frame(</em>либо <em>center</em> и <em>bounds). </em>Как правило данный способ реализуется при помощи переопределения метода <em>layoutSubviews — </em>метод UIView, который вызывается системой в тот момент, когда нам известны свойство bounds текущего экземпляра. В этом методе мы <em>вручную </em>определяем позицию и размеры дочерних вью.</p><p><br>Autolayout использует набор ограничений (constraints), которые описывают как будут располагаться вью относительно друг друга. В отличии от ручного способа, здесь нет необходимости высчитывать <em>frame</em> каждый раз когда в нашей верстке что-то изменилось, Autolayout сделает это за нас. Данный способ также допускает ручную настройку <em>frame</em> в случае, если мы хотим подкорректировать результат лейаута. Для этого нужно переопределить <em>layoutSubviews, </em>вызывать родительскую реализацию этого метода (здесь дочерние вью получат свои размеры из движка Autolayout), скорректировать фреймы дочерних вью.</p><p>Каждый из способов обладает своими преимуществами и недостатками, описание которых достойно отдельно статьи, мы же остановим наше внимание на Autoresizing.</p><h2 id="-autoresizing">Основные принципы Autoresizing</h2><p>Где среди перечисленных способов находится Autoresizing? Autoresizing работает всегда, когда мы решили использовать ручную верстку (и в некоторых случаях при использовании Autolayout, но об этом чуть позже). Autoresizing основан на двух основных понятиях: springs (струны) и struts (распорки). Перевод этих терминов точно отражает их смысл: springs — что-то, что растягивается, struts — что-то, что всегда имеет фиксированный размер. Данные понятия применимы к следующим <strong>параметрам разметки</strong>:<br>1) Внутренние — Width, Height. Описывают размер вью.<br>2) Внешние — Left, Right, Top, Bottom. Описывают положение вью внутри родителя — отступ от левого, правого, верхнего и нижнего края соответственно.</p><p>Рассмотрим простой пример того, как это работает. Допустим у нас есть задача — необходимо чтобы дочерняя вью всегда располагалась по центру родительской и пропорционально изменяла размер при изменении размера родителя (Рис. 1). Решением в данном случае будет установить struts для всех внешних параметров, и установить springs для всех внутренних параметров.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2019/05/center-resize.gif" class="kg-image"><figcaption>Рис. 1. Синий прямоугольник — родительская вью, красный — дочерняя.</figcaption></figure><!--kg-card-end: image--><p>Другой пример — необходимо разместить вью с фиксированным размером в правом нижнем углу родительской вью (Рис. 2). Для это необходимо установить struts для параметров Right и Bottom, а также для всех внутренних параметров, т.к. расстояния от нижнего и правого края до родителя и размер нашей вью строго зафиксированы. Также нужно установить strings для Left и Top, т.к. эти параметры будут изменяться при изменении размеров родительской вью.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../content/images/2019/05/topleft.gif" class="kg-image"><figcaption>Рис. 2. Вью с фиксированным размером и привязанная к правому нижнему углу</figcaption></figure><!--kg-card-end: image--><p>Очень важно на данном этапе разобраться со всеми перечисленными параметрами, так как интерфейсы для управления ими, которые мы рассмотрим далее, могут немного запутать.</p><h2 id="autoresizing-">Autoresizing в коде</h2><p>Единственный способ регулировать Autoresizing в коде — свойство <em>autoresizingMask </em>у UIView. Данное свойство имеет тип OptionSet со следующим набором опций:</p><!--kg-card-begin: markdown--><ul>
 <li>flexibleLeftMargin</li>
 <li>flexibleWidth</li>
 <li>flexibleRightMargin</li>
@@ -171,7 +159,7 @@
     // Устанавливаем autoresizing
     v2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 </code></pre>
-<!--kg-card-end: markdown--><p>Установив значение свойства [.flexibleWidth, .flexibleHeight], мы говорим, что хотим сделать изменяемые значения для параметров width и height (strings), а для остальных свойств оставить фиксированные значения (struts).</p><p>Вторая задача решается при помощи задания значения [.flexibleTopMargin, .flexibleLeftMargin]. Мы не указали в опциях размер, а также нижний и правый отступ, а значит эти параметры будут оставаться постоянными (Рис. 2)</p><p>По умолчанию свойство autoresizingMasks является пустым. Что произойдет если оставить значение по умолчанию и изменить размер родителя? Дочерняя вью будет всегда сохранять фиксированные отступы сверху и слева, а также фиксированный размер, при этом расстояние снизу и справа будут меняться. Это означает, что пустой autoresizingMasks равносилен [.flexibleBottomMargin, .flexibleRightMargin].</p><h2 id="autoresizing-interface-builder">Autoresizing в Interface Builder</h2><p></p><h2 id="translatesautoresizingmaskintoconstraints">translatesAutoresizingMaskIntoConstraints</h2><p></p>
+<!--kg-card-end: markdown--><p>Установив значение свойства [.flexibleWidth, .flexibleHeight], мы говорим, что хотим сделать изменяемые значения для параметров width и height (strings), а для остальных свойств оставить фиксированные значения (struts).</p><p>Вторая задача решается при помощи задания значения [.flexibleTopMargin, .flexibleLeftMargin]. Мы не указали в опциях размер, а также нижний и правый отступ, а значит эти параметры будут оставаться постоянными (Рис. 2)</p><p>По умолчанию свойство autoresizingMasks является пустым. Что произойдет если оставить значение по умолчанию и изменить размер родителя? Дочерняя вью будет всегда сохранять фиксированные отступы сверху и слева, а также фиксированный размер, при этом расстояние снизу и справа будут меняться. Это означает, что пустой autoresizingMasks равносилен [.flexibleBottomMargin, .flexibleRightMargin].</p><h2 id="autoresizing-interface-builder">Autoresizing в Interface Builder</h2><p></p><h2 id="translatesautoresizingmaskintoconstraints">translatesAutoresizingMaskIntoConstraints</h2><p></p><h2 id="-">Заключение</h2>
                 </div>
             </section>
 
